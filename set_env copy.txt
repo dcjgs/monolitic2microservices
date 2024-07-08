@@ -1,0 +1,23 @@
+# This file is used for convenience of local development.
+# DO NOT STORE YOUR CREDENTIALS INTO GIT
+export POSTGRES_USERNAME=jdc
+export POSTGRES_PASSWORD=totallynotmypassword
+export POSTGRES_HOST=cdr.csubsimgtebi.us-east-1.rds.amazonaws.com
+export POSTGRES_DB=postgres
+export AWS_BUCKET=arn:aws:s3:::test-user3300427-dev
+export AWS_REGION=us-east-1
+export AWS_PROFILE=default
+export JWT_SECRET=hello
+export URL=http://localhost:8100
+
+@echo off
+@echo "----------------values set --------------"
+@echo POSTGRES_USERNAME=$POSTGRES_USERNAME
+@echo POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+@echo POSTGRES_HOST=$POSTGRES_HOST
+@echo POSTGRES_DB=$POSTGRES_DB
+@echo AWS_BUCKET=$AWS_BUCKET
+@echo AWS_REGION=$AWS_REGION
+@echo AWS_PROFILE=$AWS_PROFILE
+@echo JWT_SECRET=$JWT_SECRET
+@echo URL=$URL
