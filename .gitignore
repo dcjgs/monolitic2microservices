@@ -1,2 +1,5 @@
 set_env.sh
 node_modules
+udagram-frontend/$$node_modules/
+$$node_modules
+$$package-lock.json

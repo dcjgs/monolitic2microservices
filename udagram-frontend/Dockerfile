@@ -1,4 +1,5 @@
 ### Build
+## FROM beevelop/ionic:v2023.10.1 AS ionic
 FROM beevelop/ionic:latest AS ionic
 ## Create app directory
 WORKDIR /usr/src/app
@@ -8,6 +9,7 @@ COPY package*.json ./
 RUN npm ci
 ## Bundle app source
 COPY . .
+##RUN NODE_OPTIONS=--openssl-legacy-provider ionic build
 RUN ionic build
 ### Run 
 FROM nginx:alpine
