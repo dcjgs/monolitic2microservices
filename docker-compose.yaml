@@ -23,7 +23,7 @@ services:
   api-feed:
     image: udagram-api-feed:v1.0
     volumes:
-      - C:\Users\djoao\.aws:/root/.aws
+      - $HOME/.aws:/root/.aws
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD 
