@@ -1,0 +1,41 @@
+language: node_js
+node_js:
+  - 12.8.1
+
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+
+script:
+  - docker --version # print the version for logging
+  
+  # Pre-building the img installs
+  - docker build -t udagram-reverseproxy  ./udagram-reverseproxy
+  - docker build -t udagram-api-user  ./udagram-api-user
+  - docker build -t udagram-api-feed  ./udagram-api-feed
+  - docker build -t udagram-frontend  ./udagram-frontend
+  
+   # Pre-tagg the img 
+  - docker tag udagram-reverseproxy dcjgs/udagram-reverseproxy:v1.0
+  - docker tag udagram-api-user dcjgs/udagram-api-user:v1.0
+  - docker tag udagram-api-feed dcjgs/udagram-api-feed:v1.0
+  - docker tag udagram-frontend dcjgs/udagram-frontend:local
+  
+  
+
+# Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  
+  # Push the img to docker hub
+  - docker push dcjgs/udagram-reverseproxy:v1.0
+  - docker push dcjgs/udagram-api-user:v1.0
+  - docker push dcjgs/udagram-api-feed:v1.0
+  - docker push dcjgs/udagram-frontend:local
