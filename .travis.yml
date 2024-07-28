@@ -26,7 +26,7 @@ script:
   - docker tag udagram-reverseproxy dcjgs/udagram-reverseproxy:v1.0
   - docker tag udagram-api-user dcjgs/udagram-api-user:v1.0
   - docker tag udagram-api-feed dcjgs/udagram-api-feed:v1.0
-  - docker tag udagram-frontend dcjgs/udagram-frontend:local
+  - docker tag udagram-frontend dcjgs/udagram-frontend:v1.0
   
   
 
@@ -38,4 +38,4 @@ after_success:
   - docker push dcjgs/udagram-reverseproxy:v1.0
   - docker push dcjgs/udagram-api-user:v1.0
   - docker push dcjgs/udagram-api-feed:v1.0
-  - docker push dcjgs/udagram-frontend:local
+  - docker push dcjgs/udagram-frontend:v1.0
