@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   appName: 'My Custom Insta Udagram App',
   //apiHost: 'http://a8546fb9d144b4d55a7ff2fd51aa3192-1950614716.us-west-2.elb.amazonaws.com:8080/api/v0'
-  apiHost: 'http://a6df2b00ded2746a180c0570856ed2a7-313534244.us-west-2.elb.amazonaws.com/api/v0'
+  apiHost: 'http://a6df2b00ded2746a180c0570856ed2a7-313534244.us-west-2.elb.amazonaws.com:8080/api/v0'
 };
 
 
